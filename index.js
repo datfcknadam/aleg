@@ -9,7 +9,7 @@ if (!BOT_TOKEN) {
   process.exit(1);
 }
 const CHANNEL_ID = process.env.CHANNEL_ID;
-const ADMIN_IDS = process.env.ADMIN_IDS?.split(',') || [];
+const ADMIN_IDS = process.env.ADMIN_IDS?.split(',').map(Number) || [];
 const CHECK_INTERVAL = Number(process.env.CHECK_INTERVAL) || 30_000;
 const PAGE_SIZE = 5;
 
