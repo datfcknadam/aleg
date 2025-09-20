@@ -89,11 +89,11 @@ export class Bot {
     );
 
     const navigation = [];
-    if (start + PAGE_SIZE < items.length) {
-      navigation.push(Markup.button.callback("➡️ Следующая", `next_${page + 1}`));
-    }
     if (page > 0) {
       navigation.push(Markup.button.callback("⬅️ Назад", `prev_${page - 1}`));
+    }
+    if (start + PAGE_SIZE < items.length) {
+      navigation.push(Markup.button.callback("➡️ Следующая", `next_${page + 1}`));
     }
     if (navigation.length) {
       buttons.push(navigation);
