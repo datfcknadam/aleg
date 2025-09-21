@@ -30,7 +30,7 @@ export class CheckProducts {
 
       for (const item of availableItems) {
         if (this.store.get(item.id)) {
-          return;
+          break;
         }
         const url = `${prefix}${item.url} ${item.price_min}`;
         const message = `${url} ${item.title}`;
